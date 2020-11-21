@@ -47,10 +47,11 @@ def solve(puzzle):
         #check if guess is correct
         if check(puzzle, row, col, guess):
             puzzle[row][col] = guess
+            #keeps repeating until guess is right
             if solve(puzzle):
                 return True
         puzzle[row][col] = 0
-
+    #goes back to the last empty slot if guess is not right
     return False
 
 def main():
